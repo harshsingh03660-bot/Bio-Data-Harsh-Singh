@@ -17,7 +17,7 @@
   }
 
   .biodata-container {
-    display: flex;
+    position: relative;
     background-color: #fffaf0;
     border: 12px double #d4af37; /* Stylish golden double border */
     border-radius: 14px;
@@ -27,17 +27,17 @@
     box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
     background-image: radial-gradient(circle, #fffaf0 70%, #f8f1c1);
     box-sizing: border-box;
-    gap: 30px;
   }
 
-  .content {
-    flex: 1 1 65%;
-  }
-
+  /* Profile photo top-right corner */
   .image-container {
-    flex: 0 0 150px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 120px;
+    height: 150px;
     border: 5px solid #d4af37;
-    border-radius: 14px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
@@ -70,6 +70,8 @@
   .info-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap: break-word;
   }
 
   .info-table td {
@@ -80,7 +82,7 @@
   }
 
   .info-table td:first-child {
-    width: 40%;
+    width: 38%;
     font-weight: bold;
   }
 
@@ -92,20 +94,20 @@
   /* Responsive layout for mobile */
   @media (max-width: 650px) {
     .biodata-container {
-      flex-direction: column;
       padding: 20px;
-      width: 95%;
     }
 
     .image-container {
+      position: relative;
+      top: 0;
+      right: 0;
       width: 120px;
-      height: 160px;
+      height: 150px;
       margin: 0 auto 20px auto;
-      flex: none;
     }
 
-    .content {
-      flex: none;
+    .info-table td:first-child {
+      width: 100%;
     }
   }
 </style>
@@ -114,82 +116,18 @@
 
 <div class="biodata-container">
 
-  <!-- Image container on right -->
+  <!-- Profile Photo -->
   <div class="image-container">
-    <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png?text=Profile+Photo" alt="Profile Photo" />
+    <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png" alt="Profile Photo" />
   </div>
 
-  <!-- Content container -->
-  <div class="content">
-    <h1>BIODATA</h1>
+  <h1>BIODATA</h1>
 
-    <!-- Personal Info -->
-    <div class="section-title">Personal Information</div>
-    <table class="info-table">
-      <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
-      <tr><td>Birthdate</td><td>22 October 1990</td></tr>
-      <tr><td>Birth Time</td><td>07:06 AM</td></tr>
-      <tr><td>Birth Place</td><td>Jaipur</td></tr>
-      <tr><td>Religion</td><td>Hindu</td></tr>
-      <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
-      <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
-      <tr><td>Blood Group</td><td>AB+</td></tr>
-      <tr><td>Complexion</td><td>Fair</td></tr>
-    
-    </table>
-
-    <div class="divider"></div>
-
-    <!-- Family Info -->
-    <div class="section-title">Family Information</div>
-    <table class="info-table">
-      <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
-      <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
-      <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
-      <tr><td>Occupation</td><td>Home Maker</td></tr>
-      <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
-      <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
-      <tr><td>GrandMother Gotra</td><td>Parmar</td></tr>
-      <tr><td>Maternal GrandFather Gotra</td><td>Rathore</td></tr>
-      <tr><td>Maternal GrandMother Gotra</td><td>Naruka</td></tr>
-    </table>
-
-    <div class="divider"></div>
-
-    <!-- Education & Profession -->
-    <div class="section-title">Education & Profession</div>
-    <table class="info-table">
-      <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
-      <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
-      <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
-      <tr><td>Employer/Company</td><td>Persistent System Limited</td></tr>
-      <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
-    </table>
-
-    <div class="divider"></div>
-
-    <!-- Contact Details -->
-    <div class="section-title">Contact Details</div>
-    <table class="info-table">
-      <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
-      <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
-      <tr><td>Father Village Address</td><td>Kaladera Jaipur Rajasthan</td></tr>
-      <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
-    </table>
-
-    
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Hobbies & Interests -->
-    <div class="section-title">Hobbies & Interests</div>
-    <table class="info-table">
-      <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
-      <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
-    </table>
-  </div>
-</div>
-
-</body>
-</html>
+  <!-- Personal Info -->
+  <div class="section-title">Personal Information</div>
+  <table class="info-table">
+    <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
+    <tr><td>Birthdate</td><td>22 October 1990</td></tr>
+    <tr><td>Birth Time</td><td>07:06 AM</td></tr>
+    <tr><td>Birth Place</td><td>Jaipur</td></tr>
+    <tr><td>Relig
