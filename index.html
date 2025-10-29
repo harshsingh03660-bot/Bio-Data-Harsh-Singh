@@ -19,23 +19,23 @@
   .biodata-container {
     position: relative;
     background-color: #fffaf0;
-    border: 12px double #d4af37; /* Stylish golden double border */
+    border: 12px double #d4af37;
     border-radius: 14px;
-    padding: 30px 40px;
+    padding: 35px 40px;
     width: 90%;
-    max-width: 720px;
+    max-width: 750px;
     box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
     background-image: radial-gradient(circle, #fffaf0 70%, #f8f1c1);
     box-sizing: border-box;
   }
 
-  /* Profile photo top-right corner */
+  /* Profile photo at top-right corner */
   .image-container {
     position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 120px;
-    height: 150px;
+    top: 35px;
+    right: 35px;
+    width: 130px;
+    height: 160px;
     border: 5px solid #d4af37;
     border-radius: 10px;
     overflow: hidden;
@@ -49,11 +49,10 @@
     display: block;
   }
 
-  .biodata-container h1 {
+  h1 {
     text-align: center;
     font-size: 1.8em;
     color: #6b4b00;
-    letter-spacing: 1px;
     margin-bottom: 10px;
     text-decoration: underline;
   }
@@ -62,7 +61,7 @@
     text-align: center;
     color: #6b4b00;
     font-weight: bold;
-    margin-top: 25px;
+    margin-top: 30px;
     margin-bottom: 15px;
     text-transform: uppercase;
   }
@@ -70,20 +69,26 @@
   .info-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
-    word-wrap: break-word;
+    table-layout: auto;
   }
 
-  .info-table td {
-    padding: 6px 8px;
-    font-size: 1em;
-    color: #3e2f00;
+  .info-table tr {
     vertical-align: top;
   }
 
+  .info-table td {
+    padding: 6px 10px;
+    font-size: 1em;
+    color: #3e2f00;
+    line-height: 1.5em;
+    word-break: normal;
+    white-space: normal;
+  }
+
   .info-table td:first-child {
-    width: 38%;
+    width: 40%;
     font-weight: bold;
+    color: #4b3500;
   }
 
   .divider {
@@ -91,7 +96,7 @@
     margin: 20px 0;
   }
 
-  /* Responsive layout for mobile */
+  /* Responsive layout */
   @media (max-width: 650px) {
     .biodata-container {
       padding: 20px;
@@ -106,8 +111,17 @@
       margin: 0 auto 20px auto;
     }
 
-    .info-table td:first-child {
+    .info-table td {
+      display: block;
       width: 100%;
+      padding: 4px 0;
+    }
+
+    .info-table td:first-child {
+      font-weight: bold;
+      color: #6b4b00;
+      display: block;
+      margin-top: 8px;
     }
   }
 </style>
