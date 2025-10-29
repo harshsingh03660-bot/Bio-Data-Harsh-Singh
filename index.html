@@ -5,217 +5,233 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Biodata - Elegant Golden Layout</title>
 <style>
-  body {
-    font-family: "Times New Roman", serif;
-    background-color: #e0d7b8;
-    margin: 0;
-    padding: 20px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-  }
+  body {
+    font-family: "Times New Roman", serif;
+    background-color: #e0d7b8;
+    margin: 0;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+  }
 
-  .biodata-container {
-    position: relative;
-    background-color: #fffaf0;
-    border: 12px double #d4af37;
-    border-radius: 14px;
-    padding: 35px 40px;
-    width: 90%;
-    max-width: 750px;
-    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
-    background-image: radial-gradient(circle, #fffaf0 70%, #f8f1c1);
-    box-sizing: border-box;
-  }
+  /* Main container with stylish border and shadow */
+  .biodata-container {
+    position: relative;
+    background-color: #fffaf0;
+    border: 12px double #d4af37;
+    border-radius: 14px;
+    padding: 35px 40px;
+    width: 90%;
+    max-width: 750px;
+    box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
+    background-image: radial-gradient(circle, #fffaf0 70%, #f8f1c1);
+    box-sizing: border-box;
+  }
 
-  /* Profile photo at top-right corner */
-  .image-container {
-    position: absolute;
-    top: 35px;
-    right: 35px;
-    width: 130px;
-    height: 160px;
-    border: 5px solid #d4af37;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    background: white;
-  }
+  /* Profile photo top-right */
+  .image-container {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    width: 130px;
+    height: 160px;
+    border: 5px solid #d4af37;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background: white;
+  }
 
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-  h1 {
-    text-align: center;
-    font-size: 1.8em;
-    color: #6b4b00;
-    margin-bottom: 10px;
-    text-decoration: underline;
-  }
+  h1 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #6b4b00;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
 
-  .section-title {
-    text-align: center;
-    color: #6b4b00;
-    font-weight: bold;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-  }
+  .section-title {
+    text-align: center;
+    color: #6b4b00;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
 
-  .table-wrapper {
-    width: 100%;
-    overflow-x: auto; /* Ensures horizontal scrolling if content exceeds container width */
-    margin-bottom: 10px;
-  }
+  /* Wrapper for horizontal scrolling on small screens */
+  .table-wrapper {
+    overflow-x: auto; /* This enables horizontal scrolling */
+  }
 
-  .info-table {
-    width: 100%;
-    min-width: 600px; /* Increased base minimum width for better spacing and to ensure scrolling */
-    border-collapse: collapse;
-    table-layout: fixed;
-  }
+  /* Table styles for responsiveness and fixed layout */
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Fixed width for columns */
+  }
 
-  .info-table td {
-    padding: 6px 12px;
-    font-size: 1em;
-    color: #3e2f00;
-    line-height: 1.5em;
-    vertical-align: top;
-    word-break: break-word;
-    white-space: normal;
-  }
+  .info-table tr {
+    vertical-align: top;
+  }
 
-  .info-table td:first-child {
-    width: 40%;
-    font-weight: bold;
-    color: #4b3500;
-  }
+  /* Label cells style */
+  .info-table td:first-child {
+    width: 40%;
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #4b3500;
+    white-space: nowrap; /* Keep label in one line */
+  }
 
-  .divider {
-    border-bottom: 2px solid #d4af37;
-    margin: 20px 0;
-  }
+  /* Detail cells style */
+  .info-table td:nth-child(2) {
+    padding: 6px 12px;
+    word-wrap: break-word;
+    /* Make details expand to fill remaining space */
+    width: calc(60% + 1em);
+  }
 
-  /* Responsive layout for mobile */
-  @media (max-width: 650px) {
-    .biodata-container {
-      padding: 20px;
-    }
+  /* Additional style for mobile */
+  @media (max-width: 650px) {
+    .biodata-container {
+      padding: 20px;
+    }
+    .image-container {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 150px;
+      margin: 0 auto 20px auto;
+    }
+    
+    /* FIX: Remove flex-based layout and enforce minimum width and fixed column
+       widths to ensure horizontal scrolling instead of overlap/truncation. */
 
-    /* Move photo to center top */
-    .image-container {
-      position: relative;
-      top: 0;
-      right: 0;
-      width: 120px;
-      height: 150px;
-      margin: 0 auto 20px auto;
-      display: block;
-    }
+    .info-table {
+      /* Force the table to be wider than the viewport to trigger scrolling */
+      width: 600px;
+      table-layout: fixed;
+    }
 
-    /* Mobile Table Fix: Set a generous min-width and fixed pixel column widths
-        to ensure columns don't collapse and horizontal scrolling is always available. */
-    .info-table {
-      min-width: 600px; /* Increased width to guarantee scroll and space */
-    }
+    .info-table tr {
+      /* Revert from flex to standard table display */
+      display: table-row;
+      margin-bottom: 0;
+    }
 
-    .info-table td:first-child {
-      width: 240px; /* 40% of 600px -> fixed width for label column */
-    }
+    /* Label cell width (40% of 600px) */
+    .info-table td:first-child {
+      display: table-cell;
+      width: 240px;
+      padding-right: 12px;
+      white-space: nowrap; /* Maintain nowrap for label */
+    }
 
-    .info-table td:nth-child(2) {
-      width: 360px; /* 60% of 600px -> fixed width for value column */
-    }
-  }
+    /* Detail cell width (60% of 600px) */
+    .info-table td:nth-child(2) {
+      display: table-cell;
+      width: 360px;
+      white-space: normal; /* Allow content to wrap within the 360px width */
+      overflow: visible; /* Crucial: ensures content is not truncated */
+      text-overflow: clip;
+      max-width: none;
+    }
+  }
 </style>
 </head>
 <body>
 
 <div class="biodata-container">
 
-  <!-- Profile Photo -->
-  <div class="image-container">
-    <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png?raw=true" alt="Profile Photo" />
-  </div>
+  <!-- Profile Photo -->
+  <div class="image-container">
+    <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png?raw=true" alt="Profile Photo" />
+  </div>
 
-  <h1>BIODATA</h1>
+  <h1>BIODATA</h1>
 
-  <!-- Personal Info -->
-  <div class="section-title">Personal Information</div>
-  <div class="table-wrapper">
-    <table class="info-table">
-      <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
-      <tr><td>Birthdate</td><td>22 October 1990</td></tr>
-      <tr><td>Birth Time</td><td>07:06 AM</td></tr>
-      <tr><td>Birth Place</td><td>Jaipur,Rajasthan</td></tr>
-      <tr><td>Religion</td><td>Hindu</td></tr>
-      <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
-      <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
-      <tr><td>Blood Group</td><td>AB+</td></tr>
-      <tr><td>Complexion</td><td>Fair</td></tr>
-    </table>
-  </div>
+  <!-- Personal Info -->
+  <div class="section-title">Personal Information</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
+      <tr><td>Birthdate</td><td>22 October 1990</td></tr>
+      <tr><td>Birth Time</td><td>07:06 AM</td></tr>
+      <tr><td>Birth Place</td><td>Jaipur</td></tr>
+      <tr><td>Religion</td><td>Hindu</td></tr>
+      <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
+      <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
+      <tr><td>Blood Group</td><td>AB+</td></tr>
+      <tr><td>Complexion</td><td>Fair</td></tr>
+    </table>
+  </div>
 
-  <div class="divider"></div>
+  <div class="divider"></div>
 
-  <!-- Family Info -->
-  <div class="section-title">Family Information</div>
-  <div class="table-wrapper">
-    <table class="info-table">
-      <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
-      <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
-      <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
-      <tr><td>Occupation</td><td>Home Maker</td></tr>
-      <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
-      <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
-      <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
-      <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
-      <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
-    </table>
-  </div>
+  <!-- Family Info -->
+  <div class="section-title">Family Information</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
+      <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
+      <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
+      <tr><td>Occupation</td><td>Home Maker</td></tr>
+      <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
+      <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
+      <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
+      <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
+      <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
+    </table>
+  </div>
 
-  <div class="divider"></div>
+  <div class="divider"></div>
 
-  <!-- Education & Profession -->
-  <div class="section-title">Education & Profession</div>
-  <div class="table-wrapper">
-    <table class="info-table">
-      <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
-      <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
-      <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
-      <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
-      <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
-    </table>
-  </div>
+  <!-- Education & Profession -->
+  <div class="section-title">Education & Profession</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
+      <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
+      <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
+      <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
+      <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
+    </table>
+  </div>
 
-  <div class="divider"></div>
+  <div class="divider"></div>
 
-  <!-- Contact Details -->
-  <div class="section-title">Contact Details</div>
-  <div class="table-wrapper">
-    <table class="info-table">
-      <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
-      <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
-      <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
-      <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
-    </table>
-  </div>
+  <!-- Contact Details -->
+  <div class="section-title">Contact Details</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
+      <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
+      <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
+      <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
+    </table>
+  </div>
 
-  <div class="divider"></div>
+  <div class="divider"></div>
 
-  <!-- Hobbies & Interests -->
-  <div class="section-title">Hobbies & Interests</div>
-  <div class="table-wrapper">
-    <table class="info-table">
-      <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
-      <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
-    </table>
-  </div>
+  <!-- Hobbies & Interests -->
+  <div class="section-title">Hobbies & Interests</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
+      <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
+    </table>
+  </div>
 
 </div>
 
