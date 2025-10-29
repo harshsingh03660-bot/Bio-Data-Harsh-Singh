@@ -40,6 +40,7 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background: white;
   }
 
   .image-container img {
@@ -69,7 +70,7 @@
   .info-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: auto;
+    table-layout: fixed;
   }
 
   .info-table tr {
@@ -77,18 +78,18 @@
   }
 
   .info-table td {
-    padding: 6px 10px;
+    padding: 6px 12px;
     font-size: 1em;
     color: #3e2f00;
     line-height: 1.5em;
-    word-break: normal;
-    white-space: normal;
+    word-break: break-word;
   }
 
   .info-table td:first-child {
-    width: 40%;
+    width: 38%;
     font-weight: bold;
     color: #4b3500;
+    word-wrap: break-word;
   }
 
   .divider {
@@ -99,7 +100,7 @@
   /* Responsive layout */
   @media (max-width: 650px) {
     .biodata-container {
-      padding: 20px;
+      padding: 20px 20px 40px;
     }
 
     .image-container {
@@ -109,19 +110,21 @@
       width: 120px;
       height: 150px;
       margin: 0 auto 20px auto;
+      display: block;
     }
 
-    .info-table td {
-      display: block;
-      width: 100%;
-      padding: 4px 0;
+    /* Keep table layout the same with fixed two columns */
+    .info-table td, .info-table td:first-child {
+      display: table-cell;
+      width: auto;
+      padding: 8px 10px;
     }
 
     .info-table td:first-child {
+      width: 40%;
       font-weight: bold;
       color: #6b4b00;
-      display: block;
-      margin-top: 8px;
+      vertical-align: top;
     }
   }
 </style>
