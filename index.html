@@ -16,21 +16,21 @@
     min-height: 100vh;
   }
 
+  /* Main container with stylish border and shadow */
   .biodata-container {
     position: relative;
     background-color: #fffaf0;
     border: 12px double #d4af37;
     border-radius: 14px;
     padding: 35px 40px;
-    width: 95%;
-    max-width: 850px;
+    width: 90%;
+    max-width: 750px;
     box-shadow: 0 8px 22px rgba(212, 175, 55, 0.5);
     background-image: radial-gradient(circle, #fffaf0 70%, #f8f1c1);
     box-sizing: border-box;
-    overflow: hidden;
   }
 
-  /* Profile photo top-right corner */
+  /* Profile photo top-right */
   .image-container {
     position: absolute;
     top: 35px;
@@ -48,7 +48,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
   }
 
   h1 {
@@ -66,36 +65,167 @@
     margin-top: 30px;
     margin-bottom: 15px;
     text-transform: uppercase;
+    font-size: 1.2em;
   }
 
-  /* Table styling */
+  /* Wrapper for horizontal scrolling on small screens */
   .table-wrapper {
-    width: 100%;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
   }
 
+  /* Table styles for responsiveness and fixed layout */
   .info-table {
     width: 100%;
-    min-width: 600px;
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: fixed; /* Fixed width for columns */
   }
 
   .info-table tr {
     vertical-align: top;
   }
 
-  .info-table td {
-    padding: 8px 12px;
-    font-size: 1em;
-    color: #3e2f00;
-    line-height: 1.5em;
-    word-wrap: break-word;
-    white-space: normal;
-  }
-
+  /* Label cells style */
   .info-table td:first-child {
     width: 40%;
-    font-weight: bo
+    padding: 6px 12px;
+    font-weight: bold;
+    color: #4b3500;
+    white-space: nowrap; /* Keep label in one line */
+  }
+
+  /* Detail cells style */
+  .info-table td:nth-child(2) {
+    padding: 6px 12px;
+    word-wrap: break-word;
+    /* Make details expand to fill remaining space */
+    width: calc(60% + 1em);
+  }
+
+  /* Additional style for mobile */
+  @media (max-width: 650px) {
+    .biodata-container {
+      padding: 20px;
+    }
+    .image-container {
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 120px;
+      height: 150px;
+      margin: 0 auto 20px auto;
+    }
+    /* Keep table row as flex to prevent overlap and keep side-by-side layout */
+    .info-table tr {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    /* Label */
+    .info-table td:first-child {
+      display: inline-block;
+      width: 40%;
+      font-weight: bold;
+      color: #6b4b00;
+      white-space: nowrap;
+      padding-right: 10px;
+    }
+    /* Detail */
+    .info-table td:nth-child(2) {
+      display: inline-block;
+      width: 60%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 60vw; /* expand to take more width */
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="biodata-container">
+
+  <!-- Profile Photo -->
+  <div class="image-container">
+    <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png?raw=true" alt="Profile Photo" />
+  </div>
+
+  <h1>BIODATA</h1>
+
+  <!-- Personal Info -->
+  <div class="section-title">Personal Information</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
+      <tr><td>Birthdate</td><td>22 October 1990</td></tr>
+      <tr><td>Birth Time</td><td>07:06 AM</td></tr>
+      <tr><td>Birth Place</td><td>Jaipur</td></tr>
+      <tr><td>Religion</td><td>Hindu</td></tr>
+      <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
+      <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
+      <tr><td>Blood Group</td><td>AB+</td></tr>
+      <tr><td>Complexion</td><td>Fair</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Family Info -->
+  <div class="section-title">Family Information</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
+      <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
+      <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
+      <tr><td>Occupation</td><td>Home Maker</td></tr>
+      <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
+      <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
+      <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
+      <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
+      <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Education & Profession -->
+  <div class="section-title">Education & Profession</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
+      <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
+      <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
+      <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
+      <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Contact Details -->
+  <div class="section-title">Contact Details</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
+      <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
+      <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
+      <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Hobbies & Interests -->
+  <div class="section-title">Hobbies & Interests</div>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
+      <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
