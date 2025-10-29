@@ -67,10 +67,17 @@
     text-transform: uppercase;
   }
 
+  /* Container allows horizontal scroll on small */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .info-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: fixed; /* keeps fixed columns */
+    min-width: 320px; /* minimum width so nowrap works */
   }
 
   .info-table tr {
@@ -82,14 +89,15 @@
     font-size: 1em;
     color: #3e2f00;
     line-height: 1.5em;
-    word-break: break-word;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .info-table td:first-child {
-    width: 38%;
+    width: 40%;
     font-weight: bold;
     color: #4b3500;
-    word-wrap: break-word;
   }
 
   .divider {
@@ -112,20 +120,6 @@
       margin: 0 auto 20px auto;
       display: block;
     }
-
-    /* Keep table layout the same with fixed two columns */
-    .info-table td, .info-table td:first-child {
-      display: table-cell;
-      width: auto;
-      padding: 8px 10px;
-    }
-
-    .info-table td:first-child {
-      width: 40%;
-      font-weight: bold;
-      color: #6b4b00;
-      vertical-align: top;
-    }
   }
 </style>
 </head>
@@ -142,65 +136,75 @@
 
   <!-- Personal Info -->
   <div class="section-title">Personal Information</div>
-  <table class="info-table">
-    <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
-    <tr><td>Birthdate</td><td>22 October 1990</td></tr>
-    <tr><td>Birth Time</td><td>07:06 AM</td></tr>
-    <tr><td>Birth Place</td><td>Jaipur</td></tr>
-    <tr><td>Religion</td><td>Hindu</td></tr>
-    <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
-    <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
-    <tr><td>Blood Group</td><td>AB+</td></tr>
-    <tr><td>Complexion</td><td>Fair</td></tr>
-  </table>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
+      <tr><td>Birthdate</td><td>22 October 1990</td></tr>
+      <tr><td>Birth Time</td><td>07:06 AM</td></tr>
+      <tr><td>Birth Place</td><td>Jaipur</td></tr>
+      <tr><td>Religion</td><td>Hindu</td></tr>
+      <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
+      <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
+      <tr><td>Blood Group</td><td>AB+</td></tr>
+      <tr><td>Complexion</td><td>Fair</td></tr>
+    </table>
+  </div>
 
   <div class="divider"></div>
 
   <!-- Family Info -->
   <div class="section-title">Family Information</div>
-  <table class="info-table">
-    <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
-    <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
-    <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
-    <tr><td>Occupation</td><td>Home Maker</td></tr>
-    <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
-    <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
-    <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
-    <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
-    <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
-  </table>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
+      <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
+      <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
+      <tr><td>Occupation</td><td>Home Maker</td></tr>
+      <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
+      <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
+      <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
+      <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
+      <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
+    </table>
+  </div>
 
   <div class="divider"></div>
 
   <!-- Education & Profession -->
   <div class="section-title">Education & Profession</div>
-  <table class="info-table">
-    <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
-    <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
-    <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
-    <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
-    <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
-  </table>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
+      <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
+      <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
+      <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
+      <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
+    </table>
+  </div>
 
   <div class="divider"></div>
 
   <!-- Contact Details -->
   <div class="section-title">Contact Details</div>
-  <table class="info-table">
-    <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
-    <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
-    <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
-    <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
-  </table>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
+      <tr><td>Address</td><td>426, Ganesh Nagar Vistar, Kalwar Road, Jaipur, Rajasthan - 302012</td></tr>
+      <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
+      <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
+    </table>
+  </div>
 
   <div class="divider"></div>
 
   <!-- Hobbies & Interests -->
   <div class="section-title">Hobbies & Interests</div>
-  <table class="info-table">
-    <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
-    <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
-  </table>
+  <div class="table-wrapper">
+    <table class="info-table">
+      <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
+      <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
+    </table>
+  </div>
 
 </div>
 
