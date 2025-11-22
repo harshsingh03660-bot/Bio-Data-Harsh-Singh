@@ -6,10 +6,9 @@
 <title>Biodata - Elegant Golden Layout</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  /* Base Styles */
   body {
-    font-family: "Inter", sans-serif; /* Using a modern, clean font */
-    background-color: #fcf8e8; /* Light parchment background */
+    font-family: "Inter", sans-serif;
+    background-color: #fcf8e8;
     margin: 0;
     padding: 20px 10px;
     display: flex;
@@ -18,30 +17,26 @@
     min-height: 100vh;
   }
 
-  /* Main container with stylish border and shadow (Enhanced Gold Theme) */
   .biodata-container {
     position: relative;
     background-color: #ffffff;
-    /* Nice double border in gold */
     border: 12px double #b8860b;
-    border-radius: 18px; /* Slightly more rounded */
+    border-radius: 18px;
     padding: 35px 40px;
     width: 95%;
     max-width: 800px;
-    /* Deeper, more elegant shadow */
     box-shadow: 0 10px 30px rgba(184, 134, 11, 0.4), 0 0 0 1px rgba(184, 134, 11, 0.1);
     box-sizing: border-box;
-    font-size: 1.05rem; /* Base font size */
+    font-size: 1.05rem;
   }
 
-  /* Profile photo container */
   .image-container {
     position: absolute;
     top: 35px;
     right: 35px;
     width: 140px;
     height: 170px;
-    border: 5px solid #b8860b; /* Golden border */
+    border: 5px solid #b8860b;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -56,20 +51,18 @@
     display: block;
   }
 
-  /* Main Title */
   h1 {
     text-align: center;
     font-size: 2.2em;
-    color: #8b4513; /* Rich brown/gold text */
+    color: #8b4513;
     margin-bottom: 20px;
     font-weight: 700;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
   }
 
-  /* Section Title */
   .section-title {
     text-align: left;
-    color: #b8860b; /* Bright gold for section headers */
+    color: #b8860b;
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 10px;
@@ -79,11 +72,10 @@
     padding-bottom: 5px;
   }
 
-  /* Table styles */
   .info-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; /* Ensures fixed column widths on desktop */
+    table-layout: fixed;
     margin-bottom: 15px;
   }
 
@@ -91,96 +83,19 @@
     vertical-align: top;
   }
 
-  /* Label cells style (Desktop: 40% width) */
   .info-table td:first-child {
     width: 40%;
     padding: 8px 15px;
     font-weight: 600;
     color: #4b3500;
-    background-color: #fffaf0; /* Slight off-white background for label */
+    background-color: #fffaf0;
     border-right: 1px dashed #d4d4d4;
   }
 
-  /* Detail cells style (Desktop: 60% width) */
   .info-table td:nth-child(2) {
     width: 60%;
     padding: 8px 15px;
     word-wrap: break-word;
-  }
-
-  /* Responsive Adjustments: Stacking Layout for Mobile */
-  @media (max-width: 650px) {
-    .biodata-container {
-      padding: 15px;
-      font-size: 0.95rem; /* Decreased general font size */
-      border-radius: 10px;
-    }
-
-    /* Photo container adjustments for mobile stacking */
-    .image-container {
-      position: relative;
-      top: 0;
-      right: 0;
-      width: 100px;
-      height: 120px;
-      margin: 0 auto 20px auto; /* Centered above content */
-    }
-    
-    /* Center H1 below the image */
-    h1 {
-      font-size: 1.6em;
-      margin-top: 0;
-    }
-
-    /* Section titles are now left-aligned */
-    .section-title {
-      font-size: 1.2em;
-      margin-top: 20px;
-    }
-
-    /* Crucial: Force table rows/cells to stack vertically */
-    .info-table {
-      table-layout: auto; /* Allow content to dictate size */
-      width: 100%;
-    }
-
-    .info-table tr {
-      display: block; /* Make the row take full width */
-      padding: 5px 0;
-      border-bottom: 1px solid #f0f0f0; /* Light separator */
-    }
-
-    /* Label stacks on top */
-    .info-table td:first-child {
-      display: block;
-      width: 100%;
-      padding: 5px 0 0 0;
-      font-size: 0.9em; /* Smaller font for labels */
-      color: #b8860b; /* Gold color for label to distinguish it */
-      font-weight: 700;
-      background-color: transparent; /* Remove background on mobile */
-      border-right: none;
-    }
-
-    /* Detail stacks below label */
-    .info-table td:nth-child(2) {
-      display: block;
-      width: 100%;
-      padding: 0 0 5px 5px; /* Slight indentation for detail */
-    }
-  }
-
-  /* For tablets, adjust image position to prevent overlap with title */
-  @media (min-width: 651px) and (max-width: 800px) {
-    .image-container {
-        width: 120px;
-        height: 150px;
-        top: 20px;
-        right: 20px;
-    }
-    h1 {
-        margin-right: 150px; /* Push title away from the image */
-    }
   }
 </style>
 </head>
@@ -188,68 +103,61 @@
 
 <div class="biodata-container">
 
-  <!-- Profile Photo -->
   <div class="image-container">
-    <!-- FIX: Added ?raw=true to the GitHub URL to ensure the image displays directly. -->
     <img src="https://github.com/harshsingh03660-bot/Bio-Data-Harsh-Singh/blob/main/harsh_singh.png?raw=true" 
          alt="Profile Photo" 
          onerror="this.onerror=null; this.src='https://placehold.co/140x170/d4af37/ffffff?text=Profile+Pic';" />
   </div>
 
-  <h1>BIODATA</h1>
+  <h1>BIODATA (बायोडाटा)</h1>
 
-  <!-- Personal Info -->
-  <div class="section-title">Personal Information</div>
+  <div class="section-title">Personal Information (व्यक्तिगत जानकारी)</div>
   <table class="info-table">
-    <tr><td>Name</td><td>Harsh Singh Shekhawat</td></tr>
-    <tr><td>Birthdate</td><td>22 October 1990</td></tr>
-    <tr><td>Birth Time</td><td>07:06 AM</td></tr>
-    <tr><td>Birth Place</td><td>Jaipur</td></tr>
-    <tr><td>Religion</td><td>Hindu</td></tr>
-    <tr><td>Caste</td><td>Shekhawat, Rajput</td></tr>
-    <tr><td>Height</td><td>6 ft. 0 in.</td></tr>
-    <tr><td>Blood Group</td><td>AB+</td></tr>
-    <tr><td>Complexion</td><td>Fair</td></tr>
+    <tr><td>Name (नाम)</td><td>Harsh Singh Shekhawat (हर्ष सिंह शेखावत)</td></tr>
+    <tr><td>Birthdate (जन्म तिथि)</td><td>22 October 1990 (२२ अक्टूबर १९९०)</td></tr>
+    <tr><td>Birth Time (जन्म समय)</td><td>07:06 AM (सुबह ०७:०६)</td></tr>
+    <tr><td>Birth Place (जन्म स्थान)</td><td>Jaipur (जयपुर)</td></tr>
+    <tr><td>Religion (धर्म)</td><td>Hindu (हिन्दू)</td></tr>
+    <tr><td>Caste (जाति)</td><td>Shekhawat, Rajput (शेखावत, राजपूत)</td></tr>
+    <tr><td>Height (ऊँचाई)</td><td>6 ft. 0 in. (६ फुट)</td></tr>
+    <tr><td>Blood Group (ब्लड ग्रुप)</td><td>AB+ (एबी+)</td></tr>
+    <tr><td>Complexion (रंग)</td><td>Fair (गोरा)</td></tr>
   </table>
 
-  <!-- Family Info -->
-  <div class="section-title">Family Information</div>
+  <div class="section-title">Family Information (पारिवारिक जानकारी)</div>
   <table class="info-table">
-    <tr><td>Father Name</td><td>Umarao Singh Shekhawat</td></tr>
-    <tr><td>Occupation</td><td>DSP, Rajasthan Police</td></tr>
-    <tr><td>Mother Name</td><td>Vijay Kanwar</td></tr>
-    <tr><td>Occupation</td><td>Home Maker</td></tr>
-    <tr><td>Sibling</td><td>Younger Brother, Not Married</td></tr>
-    <tr><td>Gotra</td><td>Taknet, Shekhawat</td></tr>
-    <tr><td>Grandmother Gotra</td><td>Parmar</td></tr>
-    <tr><td>Maternal Grandfather Gotra</td><td>Rathore</td></tr>
-    <tr><td>Maternal Grandmother Gotra</td><td>Naruka</td></tr>
+    <tr><td>Father Name (पिता का नाम)</td><td>Umarao Singh Shekhawat (उमराव सिंह शेखावत)</td></tr>
+    <tr><td>Occupation (पिता का व्यवसाय)</td><td>DSP, Rajasthan Police (डीएसपी, राजस्थान पुलिस)</td></tr>
+    <tr><td>Mother Name (माता का नाम)</td><td>Vijay Kanwar (विजय कंवर)</td></tr>
+    <tr><td>Occupation (माता का व्यवसाय)</td><td>Home Maker (गृहणी)</td></tr>
+    <tr><td>Sibling (भाई-बहन)</td><td>Younger Brother, Not Married (छोटा भाई, अविवाहित)</td></tr>
+    <tr><td>Gotra (गोत्र)</td><td>Taknet, Shekhawat (टकनेट, शेखावत)</td></tr>
+    <tr><td>Grandmother Gotra (पैतृक दादी का गोत्र)</td><td>Parmar (परमार)</td></tr>
+    <tr><td>Maternal Grandfather Gotra (नाना का गोत्र)</td><td>Rathore (राठौड़)</td></tr>
+    <tr><td>Maternal Grandmother Gotra (नानी का गोत्र)</td><td>Naruka (नरुका)</td></tr>
   </table>
 
-  <!-- Education & Profession -->
-  <div class="section-title">Education & Profession</div>
+  <div class="section-title">Education & Profession (शिक्षा एवं पेशा)</div>
   <table class="info-table">
-    <tr><td>Educational Qualification</td><td>B.Tech in Computer Science</td></tr>
-    <tr><td>University/College</td><td>SKIT, Jaipur</td></tr>
-    <tr><td>Occupation</td><td>Lead Software Engineer</td></tr>
-    <tr><td>Employer/Company</td><td>Persistent Systems Limited</td></tr>
-    <tr><td>Annual Income</td><td>₹12 LPA</td></tr>
+    <tr><td>Educational Qualification (शैक्षिक योग्यता)</td><td>B.Tech in Computer Science (कंप्यूटर साइंस में बी.टेक)</td></tr>
+    <tr><td>University/College (विश्वविद्यालय/कॉलेज)</td><td>SKIT, Jaipur (एसकेआईटी, जयपुर)</td></tr>
+    <tr><td>Occupation (पेशा)</td><td>Lead Software Engineer (लीड सॉफ्टवेयर इंजीनियर)</td></tr>
+    <tr><td>Employer/Company (कंपनी)</td><td>Persistent Systems Limited (पर्सिस्टेंट सिस्टम्स लिमिटेड)</td></tr>
+    <tr><td>Annual Income (वार्षिक आय)</td><td>₹12 LPA (₹१२ लाख प्रति वर्ष)</td></tr>
   </table>
 
-  <!-- Contact Details -->
-  <div class="section-title">Contact Details</div>
+  <div class="section-title">Contact Details (संपर्क विवरण)</div>
   <table class="info-table">
-    <tr><td>Mobile Number</td><td>+91 76100 94442</td></tr>
-    <tr><td>Address</td><td> Jaipur, Rajasthan </td></tr>
-    <tr><td>Father Village Address</td><td>Kaladera, Jaipur, Rajasthan</td></tr>
-    <tr><td>Mother Village Address</td><td>Kanwali, Ajmer, Rajasthan</td></tr>
+    <tr><td>Mobile Number (मोबाइल नंबर)</td><td>+91 76100 94442</td></tr>
+    <tr><td>Address (पता)</td><td>Jaipur, Rajasthan (जयपुर, राजस्थान)</td></tr>
+    <tr><td>Father Village Address (पिता का गाँव)</td><td>Kaladera, Jaipur (कालेडरा, जयपुर)</td></tr>
+    <tr><td>Mother Village Address (माता का गाँव)</td><td>Kanwali, Ajmer (कनवाली, अजमेर)</td></tr>
   </table>
 
-  <!-- Hobbies & Interests -->
-  <div class="section-title">Hobbies & Interests</div>
+  <div class="section-title">Hobbies & Interests (शौक एवं रुचियाँ)</div>
   <table class="info-table">
-    <tr><td>Hobbies</td><td>Traveling, Reading, Volleyball, Cricket</td></tr>
-    <tr><td>Interests</td><td>Music, Technology, Cultural Activities</td></tr>
+    <tr><td>Hobbies (शौक)</td><td>Traveling, Reading, Volleyball, Cricket (यात्रा, अध्ययन, वॉलीबॉल, क्रिकेट)</td></tr>
+    <tr><td>Interests (रुचियाँ)</td><td>Music, Technology, Cultural Activities (संगीत, तकनीक, सांस्कृतिक गतिविधियाँ)</td></tr>
   </table>
 
 </div>
